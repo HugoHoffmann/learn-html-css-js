@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--
+Questão 1 -
+
+Seguindo a tabela a seguir:
+
+Código | Produto       | Valor
+100    | Hot Dog       | R$ 1,70
+101    | Bauru Simples | R$ 2,30
+102    | Bauru c/ Ovo  | R$ 2,60
+103    | Hamburguer    | R$ 2,40
+104    | CheeseBurguer | R$ 2,50
+105    | Refrigerante  | R$ 1,00
+106    | Paçoca        | R$ 0,25
+107    | Bala  	       | R$ 0,05
+
+200    | Suco  	       | R$ 3,50
+201    | Agua  	       | R$ 1,25
+202    | Agua Tonica   | R$ 2,25
+
+Criar uma nova página HTML, que possua um campo text e um botão gerar. O usuário 
+deve informar os código no campo, separados por virgula, e no final, deve ser impresso 
+em tela o pedido realizado pelo usuário, com todos os itens sendo listado e o valor total
+do pedido. Deve ser permitido repetir codigos no input. Caso informado o mesmo código 2 vezes, 
+o valor deve ser somado as 2 vezes.
+
+Exemplo: Informo no campo 100, 103, 106 e clico em "gerar" deve ser impresso:
+
+---------------------------------
+Código | Produto       | Valor
+100    | Hot Dog       | R$ 1,70
+103    | Hamburguer    | R$ 2,40
+106    | Paçoca  	   | R$ 0,25
+---------------------------------
+Valor Total: 			 R$ 4,35
+---------------------------------
+Atendente: Nome de quem está desenvolvendo
+Data/Hora: Data e hora do processamento
+---------------------------------
+
+Dica: Utilizar um objeto com indices para trabalhar os valores e o calculo. Todos os itens da tabela devem estar como itens no objeto principal.
+-->
+<html>
+    <head>
+        <title>Exercício 3 Questão 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script>
+            var aProdutos = {
+                    100:{"produto":"Hot Dog", "valor":"R$ 1,70"},
+                    101:{"produto":"Bauru Simples", "valor":"R$ 2,30"},
+                    102:{"produto":"Bauru c/ Ovo", "valor":"R$ 2,60"},
+                    103:{"produto":"Hamburguer", "valor":"R$ 2,40"},
+                    104:{"produto":"CheeseBurguer", "valor":"R$ 2,50"},
+                    105:{"produto":"Refrigerante", "valor":"R$ 1,00"},
+                    106:{"produto":"Paçoca", "valor":"R$ 0,25"},
+                    107:{"produto":"Bala", "valor":"R$ 0,05"},
+                    200:{"produto":"Suco", "valor":"R$ 3,50"},
+                    201:{"produto":"Agua", "valor":"R$ 1,25"},
+                    202:{"produto":"Agua Tonica", "valor":"R$ 2,25"}   
+                };
+                
+            function verifica(){
+                $("#tabela").remove();
+                var iSoma = 0;
+                var atendente = "Hugaum";
+                var hora = new Date();
+                var aPedido=document.getElementById("pedido").value.split(",");
+                
+                var eTa = document.createElement("table");
+                eTa.setAttribute("id","tabela");
+                document.body.appendChild(eTa);
+                
+                var eTr = document.createElement("tr");
+                eTa.appendChild(eTr);
+                
+                var eTdCodigos = document.createElement("th");
+                eTdCodigos.innerHTML = "Código";
+                eTr.appendChild(eTdCodigos);
+
+                var eTdProdutos = document.createElement("th");
+                eTdProdutos.innerHTML = "Produto";
+                eTr.appendChild(eTdProdutos);
+
+                var eTdValors = document.createElement("th");
+                eTdValors.innerHTML = "Valor";
+                eTr.appendChild(eTdValors);
+                
+                $.each(aPedido, function(iIndex, iItem){
+                    var eTr = document.createElement("tr");
+                    eTa.appendChild(eTr);
+
+                    var eTdCodigo = document.createElement("td");
+                    eTdCodigo.innerHTML = iItem;
+                    eTr.appendChild(eTdCodigo);
+
+                    var eTdProduto = document.createElement("td");
+                    eTdProduto.innerHTML = aProdutos[iItem]["produto"];
+                    eTr.appendChild(eTdProduto);
+                    
+                    var eTdValor = document.createElement("td");
+                    eTdValor.innerHTML = aProdutos[iItem]["valor"];
+                    eTr.appendChild(eTdValor);
+                    aConverte = aProdutos[iItem]["valor"].split(" ");
+                    aConverte[1] = aConverte[1].replace(",",".");
+                    iSoma += parseFloat(aConverte[1]);
+                      
+                });
+                var eTr0 = document.createElement("tr");
+                eTa.appendChild(eTr0);
+                var eTdValor = document.createElement("td");
+                eTdValor.setAttribute("colspan","2");
+                eTdValor.innerHTML = "Valor Total: ";
+                eTr0.appendChild(eTdValor);
+                var eTdSoma = document.createElement("td");
+                eTdSoma.innerHTML = "R$ " + iSoma.toFixed(2).toString().replace(".",",");
+                eTr0.appendChild(eTdSoma);
+                   
+                var eTdValor = document.createElement("td");
+                        
+                var eTr2 = document.createElement("tr");
+                eTa.appendChild(eTr2);
+                var eTdInfo = document.createElement("td");
+                eTdInfo.setAttribute("colspan", "3");
+                eTdInfo.innerHTML = "Atendente: " + atendente + " <br> Data/hora: " + hora.toLocaleString();
+                eTr2.appendChild(eTdInfo);                
+            };    
+        </script>
+        <style>
+            table,tr,td,th{
+                border: 1px solid black;
+                border-spacing: 0px;
+                border-collapse: collapse;
+                background: #72b0e6;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+              <th>Código</th>  
+              <th>Produto</th>  
+              <th>Preço</th>  
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>Hot Dog</td>
+                <td>R$ 1,70</td>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Bauru Simples</td>
+                <td>R$ 2,30</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Bauru c/ Ovo</td>
+                <td>R$ 2,60</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Hamburguer</td>
+                <td>R$ 2,40</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>CheeseBurguer</td>
+                <td>R$ 2,50</td>
+            </tr>
+            <tr>               
+                <td>105</td>
+                <td>Refrigerante</td>
+                <td>R$ 1,00</td>
+            </tr>
+            <tr>
+               <td>106</td>
+                <td>Paçoca</td>
+                <td>R$ 0,25</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>Bala</td>
+                <td>R$ 0,05</td>
+            </tr>
+            <tr>
+                <td>200</td>
+                <td>Suco</td>
+                <td>R$ 3,50</td>
+            </tr>
+            <tr>         
+                <td>201</td>
+                <td>Agua</td>
+                <td>R$ 1,25</td>
+            </tr>
+            <tr>         
+                <td>202</td>
+                <td>Agua Tonica</td>
+                <td>R$ 2,25</td>
+            </tr>
+            
+        </table>
+        <br>
+        <input id="pedido" type="text">
+        <br>
+        <input type="submit" value="Gerar" onclick="verifica();" >
+        <br>
+
+    </body>
+</html>

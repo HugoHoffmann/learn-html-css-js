@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercício 2 Questão 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function soma(){
+                var numero1 = document.getElementById('n1').value;
+                var numero2 = document.getElementById('n2').value;
+                numero1 = parseInt(numero1);
+                numero2 = parseInt(numero2);
+                if(Number.isNaN(numero1) && Number.isNan(numero2)){
+                    var somaT = "Números não válidos";
+                }
+                else{
+                    var somaT = parseInt(numero2) + parseInt(numero1);
+                }
+                document.getElementById("div1").innerHTML = somaT;
+                //Desta forma abaixo da para criar um div com o sama dentro
+                //var eDiv= document.createElement("div");
+                //eDiv.innerHTML=somaT;
+                //document.body.appendChild(eDiv);
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input id="n1" type="number"> 
+        <input id="n2" type="number">
+        <br>
+        <input type="submit"  value="somar" onclick="soma();">
+        <div id="div1">
+            
+        </div>
+    </body>
+</html>

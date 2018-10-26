@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+Questão 2 - 
+Seguindo a ideia inicial da questão 1, realizar alterações para que a tabela 
+seja gerada a partir do objeto de dados de itens de compra. Ou seja, não deve 
+mais existir html da tabela, mas um JS que leia e percorra o obj, gerando assim as linhas da tabela.
+OBS: Todos os dados da tabela devem estar visiveis ao usuário conforme visual na tabela 1. Exemplo R$ e ",".
+-->
+<html>
+    <head>
+        <title>Exercício 3 Questão 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script>
+            var aProdutos = {
+                    100:{"produto":"Hot Dog", "valor":"R$ 1,70"},
+                    101:{"produto":"Bauru Simples", "valor":"R$ 2,30"},
+                    102:{"produto":"Bauru c/ Ovo", "valor":"R$ 2,60"},
+                    103:{"produto":"Hamburguer", "valor":"R$ 2,40"},
+                    104:{"produto":"CheeseBurguer", "valor":"R$ 2,50"},
+                    105:{"produto":"Refrigerante", "valor":"R$ 1,00"},
+                    106:{"produto":"Paçoca", "valor":"R$ 0,25"},
+                    107:{"produto":"Bala", "valor":"R$ 0,05"},
+                    200:{"produto":"Suco", "valor":"R$ 3,50"},
+                    201:{"produto":"Agua", "valor":"R$ 1,25"},
+                    202:{"produto":"Agua Tonica", "valor":"R$ 2,25"}   
+                };
+                function geraTabela(){
+                    var div1 = document.getElementById("div2");
+                    var eTabe = document.createElement("table");
+                    eTabe.setAttribute("id","tabelas");
+                    div1.appendChild(eTabe);
+                     
+                    var eLinha = document.createElement("tr");
+                    eTabe.appendChild(eLinha);
+                
+                    var eTdCodi = document.createElement("th");
+                    eTdCodi.innerHTML = "Código";
+                    eLinha.appendChild(eTdCodi);
+
+                    var eTdProd = document.createElement("th");
+                    eTdProd.innerHTML = "Produto";
+                    eLinha.appendChild(eTdProd);
+
+                    var eTdVal = document.createElement("th");
+                    eTdVal.innerHTML = "Preço";
+                    eLinha.appendChild(eTdVal);
+                
+                    $.each(aProdutos, function(iIndex, iItem){
+                        var eLi = document.createElement("tr");
+                        eTabe.appendChild(eLi);
+                        
+                        var eTdCo = document.createElement("td");
+                        eTdCo.innerHTML = iIndex;
+                        eLi.appendChild(eTdCo);
+                        
+                        var eTdPro = document.createElement("td");
+                        eTdPro.innerHTML = aProdutos[iIndex]["produto"];
+                        eLi.appendChild(eTdPro);
+                        
+                        var eTdPre = document.createElement("td");
+                        eTdPre.innerHTML = aProdutos[iIndex]["valor"];
+                        eLi.appendChild(eTdPre);
+                    });
+                }
+                function verifica(){
+                $("#tabela").remove();
+                var iSoma = 0;
+                var atendente = "Hugaum";
+                var hora = new Date();
+                var aPedido=document.getElementById("pedido").value.trim().split(",");// .trim() remove os espaços antes e depois do valor 
+                
+                var eTa = document.createElement("table");
+                eTa.setAttribute("id","tabela");
+                document.body.appendChild(eTa);
+                
+                var eTr = document.createElement("tr");
+                eTa.appendChild(eTr);
+                
+                var eTdCodigos = document.createElement("th");
+                eTdCodigos.innerHTML = "Código";
+                eTr.appendChild(eTdCodigos);
+
+                var eTdProdutos = document.createElement("th");
+                eTdProdutos.innerHTML = "Produto";
+                eTr.appendChild(eTdProdutos);
+
+                var eTdValors = document.createElement("th");
+                eTdValors.innerHTML = "Valor";
+                eTr.appendChild(eTdValors);
+                
+                $.each(aPedido, function(iIndex, iItem){
+                    var eTr = document.createElement("tr");
+                    eTa.appendChild(eTr);
+
+                    var eTdCodigo = document.createElement("td");
+                    eTdCodigo.innerHTML = iItem;
+                    eTr.appendChild(eTdCodigo);
+
+                    var eTdProduto = document.createElement("td");
+                    eTdProduto.innerHTML = aProdutos[iItem]["produto"];
+                    eTr.appendChild(eTdProduto);
+                    
+                    var eTdValor = document.createElement("td");
+                    eTdValor.innerHTML = aProdutos[iItem]["valor"];
+                    eTr.appendChild(eTdValor);
+                    aConverte = aProdutos[iItem]["valor"].split(" ");
+                    aConverte[1] = aConverte[1].replace(",",".");//se faz necessário o uso do replace para que ocorra a conversão abaixo de forma correta
+                    iSoma += parseFloat(aConverte[1]); 
+                });
+                var eTr0 = document.createElement("tr");
+                eTa.appendChild(eTr0);
+                var eTdValor = document.createElement("td");
+                eTdValor.setAttribute("colspan","2");
+                eTdValor.innerHTML = "Valor Total: ";
+                eTr0.appendChild(eTdValor);
+                var eTdSoma = document.createElement("td");
+                eTdSoma.innerHTML = "R$ " + iSoma.toFixed(2).toString().replace(".",",");
+                eTr0.appendChild(eTdSoma);// faz com que o eTdSoma seja criado dentro do eTr0
+                   
+                var eTdValor = document.createElement("td");
+                        
+                var eTr2 = document.createElement("tr");
+                eTa.appendChild(eTr2);
+                var eTdInfo = document.createElement("td");
+                eTdInfo.setAttribute("colspan", "3");
+                eTdInfo.innerHTML = "Atendente: " + atendente + " <br> Data/hora: " + hora.toLocaleString();
+                eTr2.appendChild(eTdInfo);
+            };    
+        </script>
+        <style>
+            table,tr,td,th{
+                border: 1px solid black;
+                border-spacing: 0px;
+                border-collapse: collapse;
+                background: #72b0e6;
+                margin:0px;
+                
+            }
+        </style>
+    </head>
+    <body onload="geraTabela();">
+        
+        <div id="div2"></div>
+        <br>
+        <input id="pedido" type="text">
+        <br>
+        <input id="botao" type="submit" value="Gerar" onclick="verifica();" >
+        <br>
+
+    </body>
+</html>

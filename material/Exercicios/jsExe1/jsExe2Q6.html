@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+6 - Criar uma página com apenas um botão. Ao clicar no botão 
+deve criar gerar uma div com tamanho de 20x20, sendo que as 
+cores para borda e para fundo serão aleatórias de acordo com 
+o array descrito a seguir: [aqua, black, brown, gold, grey,
+red, yellow, green, blue, magenta, tomato, orange, olive, navy]; 
+Considerando que as cores de borda e de background devem ser 
+selecionadas aleatoriamente, em momentos separados.
+Dica: Usar random para pegar a posição do array de cores.
+-->
+<html>
+    <head>
+        <title>Exercício 2 Questão 6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function cria(){
+                var cores = ["aqua","black","brown","gold","grey","red","yellow","green","blue","magenta","tomato","orange","olive","navy"];
+                oDivs = document.createElement("div");
+                oDivs.setAttribute("class","estilo");   
+                document.body.appendChild(oDivs);
+                var co = Math.floor(Math.random()*13);
+                oDivs.style.border = "4px solid " + cores[co];
+                var cor = Math.floor(Math.random()*13);// criando outra variável para gerar cores diferentes para o fundo
+                oDivs.style.background = cores[cor];
+                
+            }
+        </script>
+        <style>
+            .estilo{
+                width:40px;
+                height:40px;
+                float:left;
+                margin:4px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="submit" value="Criar" onclick="cria();">
+        <br>
+    </body>
+</html>

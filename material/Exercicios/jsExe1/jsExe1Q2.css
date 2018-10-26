@@ -1,0 +1,26 @@
+#div1{
+    border: 100px solid activecaption;
+    width: 50px;
+    margin-left:100px;
+    
+}
+#div2{
+    border: 100px solid aquamarine;
+    width: 50px;
+    margin-left:100px;
+}
+#div3{
+    border: 100px solid yellow;
+    width: 50px;
+    margin-left:100px;
+}
+#bto1{
+  margin-left:100px;  
+  margin-top:0px;
+}
+#bto2{
+    margin-left:100px;
+}
+#bto3{
+    margin-left:100px;
+}

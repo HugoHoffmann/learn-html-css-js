@@ -1,0 +1,111 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09/10/2018, 14:27:02
+    Author     : IPM - Alunos
+*/
+*{
+    margin: 0px;
+}
+header h1{
+    font-family: Arial;
+    color: #3596ea;
+    text-align: right;
+    margin-top: 30px;
+}
+header{
+    border-bottom: 10px solid #3596ea;
+    margin: auto;
+}
+#navega{
+    text-align: right;
+    font-family: serif;
+    float: right;
+}
+li{
+    float: left;
+    margin-right: 20px;
+    margin-top:0px;
+    color: black;
+    list-style: none;
+ 
+}
+li:hover{
+    color:#5ac7f1;
+    cursor: pointer;
+    font-style: oblique;
+    text-decoration: underline;
+}
+#submenu{
+    text-align: left;
+    float: left;
+    font-size: 22px;
+}
+#div1{
+    margin-top: 50px;
+    float:left;
+}
+h2{
+    font-family: Arial;
+    color: #3596ea;
+    text-align: left;
+    margin-top: 60px;
+   
+}
+footer{
+   color: #3596ea;
+   font-family: inherit;
+   margin-top:25%;
+   font-size:14px;
+}
+.negrito{
+    font-weight: bold;
+}
+table,tr,td{
+    border: 1px solid black;
+    font-size:16px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+td{
+    padding-right:22.7px;
+}
+table{
+    margin-top:20px;
+}
+span{
+    color:orangered;
+}
+#mapa{
+    color:darkgrey;
+}
+img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+h2 img{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+#transporte{
+   color: #3596ea; 
+}
+#submenu li:first-child{
+    color: #3596ea; 
+}
+#atendimento img{
+  width: 24px;
+  height: 24px;  
+}
+#atendimento{
+    font-size:24px;
+}
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercicio 1 Questão 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function somaIncremental(){
+                var soma = (document.getElementById('som').value.split(''));
+                var iSomaFinal = 0;
+                for(var i = 0; i < soma.length; i++){
+                    iSomaFinal = parseInt(iSomaFinal)+parseInt(soma[i]);
+                }
+                alert(iSomaFinal);
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div>
+            <form>
+                <fieldset>
+                <legend>Vamos somar!</legend>
+                    <label for="somas">Informe um número:</label>
+                    <input id="som" type="text" name="somas" onkeyup="somaIncremental();">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

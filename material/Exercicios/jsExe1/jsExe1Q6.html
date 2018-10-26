@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lista de Exercício 1 Questão 6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script>
+                function verifica(){
+                    var sEstado = document.getElementById('selecao').value;
+                    $('[name="div1"]').remove();
+                    switch (sEstado){
+                        case "1":
+                            var criaDiv = document.createElement('div');
+                            criaDiv.appendChild(document.createTextNode('Que bom!'));
+                            criaDiv.setAttribute("name","div1");
+                            criaDiv.style.background = "green";
+                            criaDiv.style.width = "300px";
+                            criaDiv.style.height = "300px";
+                            criaDiv.style.color = "white";
+                            criaDiv.style.fontSize = "18px";
+                            
+                            break;
+                        case "2":
+                            var criaDiv = document.createElement('div');
+                            criaDiv.appendChild(document.createTextNode('Vai melhorar'));
+                            criaDiv.setAttribute("name","div1");
+                            criaDiv.style.background = "blue";
+                            criaDiv.style.width = "400px";
+                            criaDiv.style.height = "600px";
+                            criaDiv.style.color = "yellow";
+                            criaDiv.style.border = "5px solid green";
+                            criaDiv.style.fontSize = "18px";
+                            break;
+                        case "3":
+                            var mensagem = "Para psicologo ligue: (47) 98844-6000";
+                            var criaDiv = document.createElement('div');
+                            criaDiv.appendChild(document.createTextNode('Procure ajuda'));
+                            criaDiv.setAttribute("name","div1");
+                            criaDiv.style.background = "red";
+                            criaDiv.style.color = "white";
+                            alert(mensagem);
+                            criaDiv.style.fontSize = "18px";
+                            
+                            break;
+                    }
+                    document.body.appendChild(criaDiv);
+                }
+        </script>
+    </head>
+    <body>
+    <label for="estado">Estado mental:</label>
+        <select name="estado" id="selecao" onchange="verifica();">
+            <option></option>
+            <option value="1">Bom</option>
+            <option value="2">Mais ou menos</option>
+            <option value="3">Mal</option>
+        </select>
+        
+    </body>
+</html>

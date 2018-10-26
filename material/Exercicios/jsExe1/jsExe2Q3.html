@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercício 2 Questão 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script>
+            function soma(){
+                $("#soma").remove();// Utilização do jquery se fez necessária para que podesse remover 
+                $("#soma1").remove();// para que podesse remover sempre o elemento anterior da tela para não se duplicar
+                var nu1 = document.getElementById("n1").value;
+                var nu2 = document.getElementById("n2").value;
+                nu1 = parseInt(nu1);
+                nu2 = parseInt(nu2);
+                if(Number.isNaN(nu1)){
+                    nu1 = 0;
+                }
+                if(Number.isNaN(nu2)){
+                    nu2 = 0;
+                }
+                var somaT = nu2 + nu1;
+                var la = document.createElement("label");
+                la.innerHTML = "Soma:";
+                la.setAttribute("id", "soma");
+                var campo = document.createElement("input");
+                campo.setAttribute("type","text");
+                campo.setAttribute("id","soma1");
+                campo.setAttribute("value",somaT);                
+                campo.readOnly = true;// faz com que o campo possa ter somente leitura sem que se possa selecionalo para inserir valor
+                campo.disabled; //
+                
+                document.body.appendChild(la);
+                document.body.appendChild(campo);
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input id="n1" type="number" onkeyup="soma();">
+        <input id="n2" type="number" onkeyup="soma();">
+        <br>
+    </body>
+</html>

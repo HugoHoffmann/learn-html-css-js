@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10/10/2018, 10:50:59
+    Author     : IPM - Alunos
+*/
+*{
+    margin:0px;
+}
+header{
+    border: 20px solid #ef6d1f;
+}
+header ul li{
+    list-style:none;
+    text-align: left;
+    float: left;
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-right: 85px;
+    color:white;
+    font-size:17.5px;
+    font-family:monospace;
+}
+li:hover{
+    margin-top: -12px;
+    cursor: pointer;
+}
+#logo a img{
+    float:left;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+#logo p{
+    font-family:sans-serif;
+    float:left;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size:38px; 
+    color:#7d7d7d;
+}
+#imagem img{
+    margin-left: 60px;
+    margin-top: 90px;
+    width:60px;
+    hegth: 60px;
+}
+

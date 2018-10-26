@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+5 - Criar uma cópia da questão 4, mas ao inves de no segundo click remover 
+todas as div, deve apenas criar as novas sem repetir o conteudo.
+Exemplo: Informou 4 e clicou, criam-se 4 divs com os conteudos numericos, informou
+2 e clicou novamente, deve manter as div de 1 a 4 criadas e, criar as divs 5 e 6.
+-->
+<html>
+    <head>
+        <title>Exercício 2 Questão 5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+        <script>
+            function criaDiv(){
+                var num = document.getElementById("n").value;
+                num = parseInt(num);
+                // verificar se já existe alguma div 
+                var verifica = document.getElementsByTagName("div");
+                var qtd = parseInt(verifica.length);
+//                if(qtd > 0){  os comentados abaixo seria um jeito muito mais custoso
+                    for(var i = 0; i < num  ; i++){
+                        var oDiv = document.createElement("div");
+                        oDiv.setAttribute("class","estilo");
+                        oDiv.innerText = i + qtd + 1;// mesmo se não existir divs ele vai somar de forma correta do começo
+                        document.body.appendChild(oDiv);  
+                     }
+//                    return true;
+//                }
+//                for(var  i = 0; i < num; i++){
+//                    var oDiv = document.createElement("div");
+//                    oDiv.setAttribute("class","estilo");
+//                    oDiv.innerText = i + 1;
+//                    document.body.appendChild(oDiv);
+//                    
+//                }
+                
+            }
+        </script>
+        <style>
+           .estilo{
+                float:left;
+                width:30px;
+                height:30px;
+                background: green;
+                border: 1px solid black;
+                margin: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <label>Quantidade: </label>
+        <input id="n" type="number">
+        <input type="submit" value="Gerar" onclick="criaDiv();">
+        <br>
+    </body>
+</html>

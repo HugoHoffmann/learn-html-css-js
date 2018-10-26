@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09/10/2018, 13:41:30
+    Author     : IPM - Alunos
+*/
+td:first-child{
+    border-right:3px solid green; 
+    font-weight: bold;
+}
+
+table,td,th{
+    border:1px solid #ded8d8;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    padding: 10px;
+}
+

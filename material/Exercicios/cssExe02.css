@@ -1,0 +1,41 @@
+*{
+    background:blue;
+}
+p{
+    background:green;
+}
+.divClass img{
+    width:500px;
+    height:500px;
+    float: left;
+    border: 5px;
+}
+#umId img{
+    width: 400px;
+    height: 400px;
+    margin-left: 5px;
+    float: left;
+    border: 5px;
+}
+#id1 p{
+    font-family: arial;
+    color: red;
+    background: white;
+    float: left;
+}
+#id2 p{
+    font-family: Times;
+    font-size: 20px;
+    color: green;
+    background: white;
+    float: left;
+}
+#id3 p{
+    background: white;
+    font-family: Comic Sans Serif;
+    font-size: 20px;
+    color: blue;
+    font-style: italic;
+    float: left;
+}
+

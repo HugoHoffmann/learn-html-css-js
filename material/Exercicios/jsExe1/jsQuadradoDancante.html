@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Quadrado que se move</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function vai(){
+                var eQuadrado = document.getElementById("animacao");
+                var po = 650;
+                var id = setInterval(frame, 2);
+                function frame(){
+                    eQuadrado.style.left = po + 'px';
+                    po = po - 0.5; 
+                    if(po===0){
+                        clearInterval(id);
+                        var id1 = setInterval(frame1, 2);
+                        function frame1(){
+                            eQuadrado.style.top = po + 'px';
+                            po = po + 0.5; 
+                            if(po===300){
+                                clearInterval(id1);
+                                var id2 = setInterval(frame2, 2);
+                                po=0;
+                                function frame2(){
+                                    eQuadrado.style.left = po + 'px';
+                                    po = po + 0.5; 
+                                    if(po===650){
+                                        clearInterval(id2);
+                                        var id3 = setInterval(frame3, 2);
+                                        po=300;
+                                        function frame3(){
+                                            eQuadrado.style.top = po + 'px';
+                                            po = po - 0.5; 
+                                            if(po===0){
+                                                clearInterval(id3);
+                                                vai();
+                                            }
+                                        };
+                                    }
+                                };
+                            }
+                        };
+                    }
+                };
+                
+                
+            }
+        </script>
+        <style>
+            #div1 {
+                width: 700px;
+                height: 700px;
+                position: relative;
+                background: white;
+            }
+            #animacao{
+                background: red;
+                color:black;
+                width: 100px;
+                height:100px;
+                position: absolute;
+            }
+            img{
+                width: 100px;
+                height:100px;
+            }
+        </style>
+    </head>
+    <body onload="vai();">
+        <div id="div1">
+            <div id="animacao"> <img src="baby.png"></div>
+        </div>
+    </body>
+</html>

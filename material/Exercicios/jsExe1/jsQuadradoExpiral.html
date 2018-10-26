@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Não é a MAMÃE</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function vai(){
+                var eQuadrado = document.getElementById("animacao");
+                var po = 220;
+                var id = setInterval(frame, 5);
+                var po1 = 0;
+                function frame(){
+                    eQuadrado.style.top = po1 + 'px';
+                    eQuadrado.style.left = po + 'px';
+                    po = po - 0.5; 
+                    po1 = po1 + 0.5; 
+                    if(po==0){
+                       clearInterval(id);
+                       id1 = setInterval(frame1, 5);
+                       //po = 220;
+                       function frame1(){
+                          eQuadrado.style.top = po1 + 'px';
+                          eQuadrado.style.left = po + 'px'; 
+                          po = po + 0.5; 
+                          po1 = po1 + 0.5;   
+                          if(po1==450){
+                              clearInterval(id1);
+                              id2 = setInterval(frame2 , 5);
+                              alert("Não é a MAMÃE!");
+                              alert("Cade a MAMÃE???");
+                              function frame2(){
+                                 eQuadrado.style.top = po1 + 'px';
+                                 eQuadrado.style.left = po + 'px';  
+                                 po = po + 0.5; 
+                                 po1 = po1 - 0.5;
+                                 if(po1==230){
+                                     clearInterval(id2);
+                                     id3 = setInterval(frame3, 5);
+                                     alert("ACHEI A MAMÃE!");
+                                     function frame3(){
+                                        eQuadrado.style.top = po1 + 'px';
+                                        eQuadrado.style.left = po + 'px';  
+                                        po = po - 0.5; 
+                                        po1 = po1 - 0.5;
+                                        if(po1==0) {
+                                            clearInterval(id3);
+                                            vai();
+                                        }
+                                     }
+                                     
+                                 }
+                              }
+                              
+                          }
+                       }
+                    }
+                }
+            }
+        </script>
+        <style>
+            #div1 {
+                width: 500px;
+                height: 500px;
+                position: relative;
+                background: gray;
+                margin-left: 300px;
+                margin-top: 100px;
+            }
+            #animacao{
+                background: red;
+                color:black;
+                width: 50px;
+                height:50px;
+                position: absolute;
+            }
+            img{
+                width: 50px;
+                height:50px;
+            }
+            h2{
+                margin-left: 35%;
+            }
+            #mae{
+                margin-top: 231px;
+                margin-left: 500px
+            }
+            #dino{
+                margin-top: 215px;
+                margin-left: 229px
+            }
+        </style>
+    </head>
+    <body onload="vai();">
+        <h2>CADE A MAMÃE!</h2>
+        <div>
+            <div id="div1">
+                <img id="mae" src="mae.png">
+                <img id="dino" src="dino.png">
+                
+                <div id="animacao"> <img src="baby.png"></div>
+            </div>
+        </div>
+    </body>
+</html>

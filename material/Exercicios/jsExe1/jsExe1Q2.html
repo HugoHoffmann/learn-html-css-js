@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+2 - Criar 3 divs coloridas e 3 botões, cada um 
+referenciando a uma div. Cada vez que for clicado 
+o botão ele deve exibir ou ocultar 
+a div relacionada a ele. Exemplo: Ao carregar a tela
+teremos a div 1 com o botão 1. Ao clicar no botão 1 a div 1 será 
+e, ao clicar novamente ela será exibida. Necessário 
+validar se ela está visivel, caso esteja esconder, caso não esteja exibir.
+-->
+<html>
+    <head>
+        <title>JS Exercicio 1 questão 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="jsExe1Q2.css">
+        <script>
+            /*Usando jQuery
+             * function oculta(oDiv, oBto){
+             * var oDiv=document.getElementById(oDivv);
+               var oBto=document.getElementById(oBtoo);
+               if(oDiv.style.display != ""){
+                   oBto.value="ocultar"
+                   oDiv.show();
+               }
+               else{
+                   oBto.value="exibir";
+                   oDiv.hide();
+               }
+            } 
+             */
+            
+            
+            function oculta(oDivv, oBtoo){
+               var oDiv = document.getElementById(oDivv);
+               var oBto = document.getElementById(oBtoo);
+               if(oDiv.style.display != ""){
+                   oBto.value="ocultar";
+                   oDiv.style.display = "";
+               }
+               else{
+                   oBto.value = "exibir";
+                   oDiv.style.display = "none";
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+        </div>
+        <input id="bto1" type="button" name="botao1" value="Oculta" onclick="oculta('div1', 'bto1');">
+        <div id="div2">
+        </div>
+        <input id="bto2" type="button" name="botao2" value="Oculta" onclick="oculta('div2', 'bto2');">
+        <div id="div3">
+        </div>
+        <input id="bto3" type="button" name="botao3" value="Oculta" onclick="oculta('div3', 'bto3');">
+        
+    </body>
+</html>

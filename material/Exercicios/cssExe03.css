@@ -1,0 +1,15 @@
+#paragrafo p{
+    width:150px;
+    height: 100px;
+    color: white;
+    background-color: green;
+    font-family: arial;
+    border-top: 2px solid blue;
+    border-left: 2px solid yellow;
+    border-bottom: 2px solid red;
+    border-top-style: dashed;
+    border-left-style: dotted;
+    border-bottom-style: double;
+    margin-top: 10px;
+    margin-left: 10px;
+}

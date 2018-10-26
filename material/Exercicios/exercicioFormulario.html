@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<h1>Um titulo de nivel 1</h1>
+		</br>
+		<h6>Um titulo de nivel 6</h6>
+	
+		<form>
+			<legend>Vaga de emprego</legend>
+			<fieldset>
+				<legend>Dados da pessoa</legend>
+				<label for="nome">Nome:</label>
+				<input type="name" name="nome" value="Isira seu nome...">
+				</br>
+				<label for="nome">Idade:</label>
+				<input type="number" name="idade">
+				</br>
+				<label for="cpf">CPF:</label>
+				<input type="text" name="cpf" value="Insira seu CPF..."> 
+				</br>
+				<label for="rg">RG:</label>
+				<input type="text" name="rg" value="Insira se RG..." > 
+				</br>
+				<label for="pai">Nome do pai:</label>
+				<input type="name" name="pai" value="Insira o nome do seu pai...">
+				</br>
+				<label for="mae">Nome:</label>
+				<input type="name" name="mae" value="Insira o nome da sua mãe...">
+				</br>
+				<label for="obs">Observação</label>
+				<textarea t></textarea>
+				</br>
+				<label for="curriculo">Curriculo:</label>
+				<input type="file" name="curriculo">
+			</fieldset>
+			
+			<fieldset>
+				<legend>Endereço:</legend>
+				<label for="rua">Rua:</label>
+				<input type="text" name="rua">
+				</br>
+				<label for="n">Número:</label>
+				<input type="number" name="n">
+				</br>
+				<label for="cid">Cidade:</label>
+				<input type="text" name="cid">
+				</br>
+				<label for="es">Estado:</label>
+				<select name="es">
+					<option>SC</option>
+					<option>SP</option>
+					<option>RS</option>
+					<option>AM</option>
+					<option>RJ</option>
+					<option>MT</option>
+					<option>CE</option>
+					<option>BA</option>
+				</select>			
+				</br>
+				<label for="obs">Observação</label>
+				<textarea t></textarea>
+			</fieldset>
+			
+			<fieldset>
+				<legend>Sobre a Vaga:</legend>
+				<label for="lin">Linguagem:</label> </br>
+				<input type="checkbox" name="especial[]"> PHP </br>
+				<input type="checkbox" name="especial[]"> JAVA </br>
+				<input type="checkbox" name="especial[]"> C++ </br>
+				<input type="checkbox" name="especial[]"> JAVA SCRIPT </br>
+				
+				<legend for="sala">Pretenção salárial:</legend>
+				</br>
+				<input type="radio" name="sala"> Até 1500 </br>
+				<input type="radio" name="sala"> Até 3000 </br>
+				<input type="radio" name="sala"> Acima de 3000 </br>
+				
+				<label for="sexo">Sexo</label>
+				<select name="sexo">
+				 <option>Masculino</option>
+				 <option>Feminino</option>
+				 <option>Outro</option>
+				</select>
+			</fieldset>
+			</br>
+			<input type="submit" name="enviar" value="ENVIAR">
+			<input type="reset" name="limpar" value="LIMPAR"> 
+			<input type="button" value="botão">
+		</form>
+	
+	</body>
+</html>
