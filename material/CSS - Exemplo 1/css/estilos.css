@@ -1,0 +1,51 @@
+table, th, tr, td {
+	border: 1px solid black;
+}
+tr:first-child{
+	background: black;
+	color: white;
+	border: yellow;
+}
+div{
+	border: 3px solid brown;
+	height: 80px;
+	width: 300px;
+	text-align: right;
+}
+div span,
+div > span {
+	background: red;
+	color: yellow;
+}
+#selecaoPorId{
+	height: 55px;
+	width: 55px;
+	cursor: pointer;
+	border: 1px dotted red;
+	float: left;
+	padding-right: 50px;
+	text-align: left;
+}
+.selecaoPorClasse{
+	height: 65px;
+	width: 65px;
+	border: 1px solid blue;
+	float: left;
+	margin-left: 20px;
+	text-align: left;
+}
+#divComSpan:hover{
+	background: chocolate;
+}
+.nivelUm{
+	height: 45px;
+	width: 45px;
+	border: 1px solid black;
+	background: black;
+}
+.nivelUm .nivelDois{
+	height: 25px;
+	width: 25px;
+	border: 1px solid black;
+	background: white;
+}
