@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+Avaliação Questão 17
+17) Faça um programa que possua 2 campos de texto e 4 botões: um para somar, um
+para multiplicar, um para calcular a média e um para concatenar. A cada click, um
+alert deve apresentar o valor resultante da operação.
+
+-->
+<html>
+    <head>
+        <title>Avaliação Questão 17</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="AvaliacaoQuestao17.js"></script>
+    </head>
+    <body>
+        <form>
+            <label for="n1">Informe o primeiro número:</label>
+            <input id="numero1" type="text" name="n1">
+            <br>
+            <label for="n2">Informe o segundo numero:</label>
+            <input id="numero2" type="text" name="n2">
+            <br>
+            <input type="submit" onclick="soma();" value="Soma">
+            <input type="submit" onclick="multiplica();" value="Multiplicar">
+            <input type="submit" onclick="media();" value="Media">
+            <input type="submit" onclick="concatenar();" value="Concatena">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+ Avaliação questão 18
+18) Crie uma página com 1 campo de texto, que sempre que o usuário digitar um valor,
+alerte em tela quantos caracteres existem no campo e se a quantidade é maior que
+5 caracteres. Exemplo: supondo que o valor do campo é 1234 deve alertar “4
+Caracteres Informados, não possui mais de 5 caracteres”.
+
+-->
+<html>
+    <head>
+        <title> Avaliação questão 18</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="AvaliacaoQuestao18.js"></script>
+    </head>
+    <body>
+        <form>
+            <label for="numeros">Informe um valor:</label>
+            <input id="numeros" type="text" name="numeros" onkeyup="verifica();">
+        </form>
+    </body>
+</html>
